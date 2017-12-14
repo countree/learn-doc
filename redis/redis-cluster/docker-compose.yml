@@ -1,0 +1,40 @@
+version: '3'
+services:
+    redis1:
+        hostname: redis1
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        ports:
+            - "7000:6379"
+        entrypoint: ${entrypoint}
+    redis2:
+        hostname: redis2
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        entrypoint: ${entrypoint}
+    redis3:
+        hostname: redis3
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        entrypoint: ${entrypoint}
+    redis4:
+        hostname: redis4
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        entrypoint: ${entrypoint}
+    redis5:
+        hostname: redis5
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        entrypoint: ${entrypoint}
+    redis6:
+        hostname: redis6
+        image: ${image_name}
+        volumes:
+            - ${local_redis_conf}:${container_redis_conf}
+        entrypoint: ${entrypoint}
