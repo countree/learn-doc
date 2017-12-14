@@ -14,7 +14,7 @@
 
 > 如果要访问redis只能通过其他的container访问(其他container需要加入到redis的网路)
 
-##### 修改redis.config
+###### 如果修改redis.config
 如果要修改`redis.cofig`端口号如果变化,同时需要修改脚本`create-redis-cluster.sh`中的端口号,如下
 > 替换`":6379"`为`redis.config`中配置的的端口号
 ```
