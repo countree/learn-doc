@@ -109,7 +109,7 @@ ENTRYPOINT ["/redis-trib.rb"]
 ```
 2.创建`redis/ruby`镜像
 
-    docker build -t redis/ruby
+    docker build -t redis/ruby .
     
 3.使用自定义的镜像`redis/ruby` 创建`redis`集群
 
