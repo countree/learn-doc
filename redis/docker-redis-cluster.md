@@ -115,15 +115,17 @@ ENTRYPOINT ["/redis-trib.rb"]
 
     docker run -it --rm --network=rediscluster_default redis/ruby \
             create --replicas 1 ip:prot
->ip:   6个redis container 的ip 
+命令解释：
+>ip:   6 个redis container 的ip 
+
 >port:  redis.conf配置的port 默认：6379
+
 >--network:使用redis container的网络,`rediscluster_default`这个网络是在执行`docker-compose up -d `时默认自动生成的网络名称,可以查看官网`docker-compose network`的配置
 
 可以使用命令查看6个redis container的ip
 
     docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps |grep redis |awk '{print $1}') 
 
->至此集群搭建完成
 
-### 以上配置已写成一个脚本详见本目录下的 `  README.MD`
+### 以上配置已写成一个脚本详见本目录下的 `README.MD`
 
