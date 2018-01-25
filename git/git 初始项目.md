@@ -1,7 +1,7 @@
 ### 初始项目使用git
 #### 在github上新建仓库
 如果本地已经存在此项目，需要添加到github使用
-```shell 
+```shell
 cd projectFolder
 #初始化此目录为git项目
 git init
@@ -20,3 +20,5 @@ git push -u origin master
 git push -u -f origin master
 
 ```
+文件名字太长checkout出错解决
+`git config --system core.longpaths true`
