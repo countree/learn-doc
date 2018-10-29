@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  mongod-1:
+    image: mongo:3.6
+    ports:
+      - "27020:27017"
+    volumes:
+      - "${logpath}/data-1-log:/data/log"
+      - "${datapath}/data-1:/data/db"
+      - "${configpath}/data-1/mongodb.conf:/etc/mongodb.conf"
+    command: mongod -f /etc/mongodb.conf 
+    networks:
+      - mongodb-net
+
+  mongod-2:
+    image: mongo:3.6
+    ports:
+      - "27018:27017"
+    volumes:
+      - ${logpath}/data-2-log:/data/log
+      - ${datapath}/data-2:/data/db
+      - ${configpath}/data-2/mongodb.conf:/etc/mongodb.conf
+    command: mongod -f /etc/mongodb.conf 
+    networks:
+      - mongodb-net
+
+  mongod-3:
+    image: mongo:3.6
+    ports:
+      - "27019:27017"
+    volumes:
+     - "${logpath}/data-3-log:/data/log"
+     - "${datapath}/data-3:/data/db"
+     - "${configpath}/data-3/mongodb.conf:/etc/mongodb.conf"
+    command: mongod -f /etc/mongodb.conf 
+    networks:
+      - mongodb-net
+
+
+networks:
+   mongodb-net:
