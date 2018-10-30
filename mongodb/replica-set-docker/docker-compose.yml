@@ -6,9 +6,14 @@ services:
     ports:
       - "27020:27017"
     volumes:
+            #挂载日志目录
       - "${logpath}/data-1-log:/data/log"
+            #挂载数据目录
       - "${datapath}/data-1:/data/db"
+            #挂载配置目录  各个实例使用的是相通的配置文件
       - "${configpath}/data-1/mongodb.conf:/etc/mongodb.conf"
+
+        # 启动命令 官网默认镜像是不带配置文件启动的 需要指定
     command: mongod -f /etc/mongodb.conf 
     networks:
       - mongodb-net
